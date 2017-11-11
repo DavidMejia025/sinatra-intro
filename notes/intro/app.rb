@@ -16,7 +16,7 @@ get '/dogs' do
   erb :dogs
 end
 
-post '/create/dog' do
+get '/create/dog' do
   dogs << params
   redirect '/dogs'
 end

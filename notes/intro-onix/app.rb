@@ -27,6 +27,7 @@ end
 
 # Crear el estudiante
 post '/onix/students/create' do
+	binding.pry
   nickname = params[:nickname]
   students << nickname
   @names = students
