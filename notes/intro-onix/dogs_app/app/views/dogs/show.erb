@@ -1,0 +1,8 @@
+<h1>Hola mi nombre es <%= @dog.name %> y tengo <%= @dog.age %> años</h1>
+
+<a href="/dogs/<%= @dog.id %>/edit">Editar</a>
+
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Borrar">
+</form>

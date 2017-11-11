@@ -1,10 +1,11 @@
 <h1>Hola Onix</h1>
 
 <ul>
-  <% @names.each do |name| %>
-    <li><%= name %></li>
+  <% @names.each.with_index do |name, index| %>
+    <li><a href="/onix/students/<%= index %>"><%= name %></a></li>
   <% end %>
 </ul>
 
 <a href="/onix/students/new">Crea estudiante nuevo</a>
+
 

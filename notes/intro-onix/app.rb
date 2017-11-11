@@ -19,6 +19,22 @@ get '/onix/v2' do
   erb :onix_v2
 end
 
+get '/onix/students/:id' do
+  @student = students[params[:id].to_i]
+  erb :onix_student
+end
+
+# get '/onix/students/1' do
+#   @student = students[0]
+#   erb :onix_student
+# end
+
+# get '/onix/students/2' do
+#   @student = students[1]
+#   erb :onix_student
+# end
+
+
 
 # Mostrar un formulario para datos estudiante
 get '/onix/students/new' do
@@ -33,6 +49,16 @@ post '/onix/students/create' do
   @names = students
   erb :onix_v2
 end
+
+
+
+
+
+
+
+
+
+
 
 
 
