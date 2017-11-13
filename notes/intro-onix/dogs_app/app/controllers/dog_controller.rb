@@ -27,7 +27,7 @@ post '/dogs' do
 
   @dog = Dog.new(name: params[:name], age: params[:age])
   if @dog.save
-    redirect "/dogs/#{dog.id}"
+    redirect "/dogs/#{@dog.id}"
   else
     @errors = @dog.errors.full_messages
     erb :"dogs/new"
@@ -48,7 +48,7 @@ patch '/dogs/:id' do
   # p params
   @dog = Dog.find(params[:id])
   if @dog.update(name: params[:name], age: params[:age])
-    redirect "/dogs/#{dog.id}"
+    redirect "/dogs/#{@dog.id}"
   else
     @errors = @dog.errors.full_messages
     erb :"dogs/edit"
