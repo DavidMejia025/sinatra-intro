@@ -1,0 +1,30 @@
+<div style="margin: auto;width: 50%;
+    		padding: 10px;">
+
+<header style=" padding: 1em;
+			    color: white;
+    			background-color: blue;
+    			clear: left;
+    			text-align: center;"> Dear author, here you can edit your post.
+</header>   
+
+<div><br>
+	<br>
+	<br>
+	<form action="/entries/<%= @entry.id %>" method="POST">
+		<input type="hidden" name="_method" value="PATCH">
+		<label for="   Title">    Title:</label>
+		<input type="text" name="entry[title]" value="<%=@entry.title  %>"><br><br>
+		<label for="Title"> Author:</label>
+		<input type="text" name="entry[autor]" value="<%=@entry.autor  %>"><br><br><br>
+		<label for="Title"> content:</label>
+		<input type="text" name="entry[content]" value="<%=@entry.content  %>"><br><br>
+		<!-- <label for="Title"> Tags:</label>
+		<input type="text" name="entry[tags]" value="<%=@entry.likes  %>"><br><br><br><br> -->
+		<label for="Title"> Likesss:</label>
+		<input type="text" name="entry[likes]" value="<%=@entry.likes  %>"><br><br>
+		<input type="submit" value="Update">
+	</form>
+</div>
+<h3><a href="/entries/<%= @entry.id%>"> Back </a></h3>
+</div>

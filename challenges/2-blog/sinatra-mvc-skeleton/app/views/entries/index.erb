@@ -1,0 +1,30 @@
+<div style="margin: auto;width: 50%;
+    		padding: 10px;">
+
+<div> <h1 style="color: blue;"> Welcome to our blog:</h1>
+</div>
+
+<div> <h1 style="color: blue;"> Here is our last entry:</h1>
+	  <h3> <a href="/entries/<%= @entries.first.id%>"> Title: <%= @entries.first.title %> </a></h3>
+	  <h3> Author: <%= @entries.first.autor %> </h3>
+	  <h3> Content: <%= @entries.first.content %> </h3>
+	  <h3> Likes: <%= @entries.first.likes %> </h3>
+</div>
+
+<a href="/entries/new"> Create a new post</a>
+
+<div> <h1 style="color: grey;"> archive:</h1>
+	<ul style="list-style: none;">
+		<% @entries.each do |entry| %>
+		  <li>
+			  <h3> <a href="/entries/<%= entry.id%>"> Title: <%= entry.title %> </a></h3>
+			  <h3> Author: <%= entry.autor %> </h3>
+			  <h5> Likes: <%= entry.likes %> </h3>
+			  <h4> --------------------------</h4>
+		  </li>
+	  <% end %>	
+	</ul>
+
+</div>
+
+</div>
