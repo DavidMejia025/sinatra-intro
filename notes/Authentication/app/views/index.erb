@@ -1,0 +1,9 @@
+<div class="container">
+  <% if current_user %>
+    <% @users.each do |user| %>
+    <li><%= user.name %></li>
+    <% end %>
+  <% else %>
+    <h1>Bienvenido</h1>
+  <% end %>
+</div>

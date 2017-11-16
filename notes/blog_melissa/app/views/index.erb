@@ -1,0 +1,43 @@
+<h1>Bienvenido al blog mas quejon!</h1>
+
+<h2>Estas son las quejas actuales</h2>
+<ul>
+  <% @entries.each do |entry| %>
+    <div class="entry" >
+      <li>
+        <strong><%= entry.title %></strong>
+        <p><%= entry.body %></p>
+        <p>
+          Tags:
+          <% entry.tags.each do |tag| %>
+            #<%= tag.tag %>
+          <% end %>
+        </p>
+        <a href="/<%= entry.id %>">Show</a>
+        <a href="/<%= entry.id %>/delete">Delete</a>
+        <a href="/<%= entry.id %>/edit">Edit</a>
+      </li>
+    </div>
+    <br>
+    <% end %>
+</ul>
+
+<h2>Ingresa tu queja!</h2>
+<div class="input_entry">
+  <form action="/entries" method="post">
+    <label for="title">Title:</label><br>
+    <input id="title" name="title"><br><br>
+    <label for="body">Entry:</label><br>
+    <textarea id="body" name="body" cols="40" rows="5"></textarea><br><br>
+    <label for="entry_tags">Tags:</label><br>
+    <input id="entry_tags" name="entry"><br><br>
+    <input type="submit" value="Crear">
+  </form>
+</div>
+<br>
+
+<h2>Buscar un tag</h2>
+<form action="/tags" method="get">
+  <input type="search" placeholder="Busca un tag aqui" name="search">
+  <input type="submit" value="Buscar">
+</form>

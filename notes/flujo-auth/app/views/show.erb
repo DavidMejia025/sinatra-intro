@@ -1,0 +1,10 @@
+<% if current_user %>
+  <h1>Hola <%= current_user.email %></h1>
+  <form action="/session" method='post'>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value='Logout'>
+  </form>
+<% else %>
+  <h1>Debes loguearte </h1>
+<% end %>
+

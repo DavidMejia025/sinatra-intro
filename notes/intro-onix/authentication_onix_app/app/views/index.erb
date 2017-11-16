@@ -1,0 +1,9 @@
+<div class="container">
+  <% if current_user %>
+    <% @users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  <% else %>
+    <p>Bienvenidos al app logueate</p>
+  <% end %>
+</div>

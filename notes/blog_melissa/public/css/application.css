@@ -1,0 +1,18 @@
+/* Aca va tu CSS */
+body{
+	padding: 50px;
+}
+.entry {
+	margin: 10px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 8px;
+}
+
+li{
+	list-style: none;
+}
+
+.input_entry {
+	padding: 30px;
+}

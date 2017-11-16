@@ -1,0 +1,25 @@
+
+<!-- @owner -->
+
+<h1>Datos del perro nuevo de <%= @owner.name %></h1>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/owners/<%= @owner.id %>/dogs" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="dog[name]"><br>
+  <label for="age">Age</label>
+  <input type="number" name="dog[age]"><br>
+  <input type="submit" value="Crear perro">
+</form>
+
+<!-- params = {name: '', age: 423} -->
+<!-- params = { dog: {name: '', age: 423} } -->
+
+

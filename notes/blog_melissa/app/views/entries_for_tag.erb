@@ -1,0 +1,9 @@
+<h1>La entradas que coinciden con el tag <%= params[:tag] %> son:</h1>
+<ul>
+  <% @matching_entries.each do |entry| %>
+    <li>
+      <%= entry.title %>
+      <a href="/<%= entry.id %>">Show More..</a>
+    </li>
+  <% end %>
+</ul>
