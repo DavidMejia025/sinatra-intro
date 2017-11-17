@@ -1,0 +1,15 @@
+<h1>Edita esta entrada</h1>
+
+<form action="/<%= @entry.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <label for="title">Title:</label><br>
+  <input id="title" name="title" placeholder="<%= @entry.title %>" ><br><br>
+  <label for="body">Entry:</label><br>
+  <textarea id="body" name="body" cols="40" rows="5" placeholder="<%= @entry.body %>"></textarea>
+  <br><br>
+  <label for="entry_tags">Tags:</label><br>
+  <input id="entry_tags" name="entry[tags]" value=""><br><br>
+  <input type="submit" value="Actualizar">
+</form>
+
+params = {entry: { tags: "tag1"}}

@@ -1,0 +1,10 @@
+<h1>Lista de dueños</h1>
+
+<ul>
+  <% @owners.each do |owner| %>
+    <li>
+      <a href="/owners/<%= owner.id %>"><%= owner.name %></a>
+    </li>
+  <% end %>
+</ul>
+

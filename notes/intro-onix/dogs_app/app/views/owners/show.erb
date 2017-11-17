@@ -1,0 +1,15 @@
+<!-- SHOW de Owner -->
+
+<h1>Hola mi nombre es <%= @owner.name %></h1>
+
+<h4>Estos son mis perros</h4>
+
+<ul>
+  <% @owner.dogs.each do |dog| %>
+    <li>
+      <a href="/dogs/<%= dog.id %>"><%= dog.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/owners/<%= @owner.id %>/dogs/new">Nuevo perro para <%= @owner.name %></a>

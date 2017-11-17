@@ -1,0 +1,19 @@
+<h1>New Dog</h1>
+
+<% if @errors %>
+  <h3>Su perro es invalido</h3>
+  <img src="http://cde.3.elcomercio.pe/ima/0/1/1/1/2/1112065/base_image.jpg" alt="">
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/dogs" method="post">
+  <label for="name">Nombre</label><br>
+  <input type="text" name="dog[name]" placeholder="Nombre del perrito">
+  <label for="age">Edad</label><br>
+  <input type="number" name="dog[age]" placeholder="Edad del perrito">
+  <input type="submit" value="Crear Perrito">
+</form>

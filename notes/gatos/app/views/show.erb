@@ -1,0 +1,11 @@
+<h1>Hola mi nombre es <%= @cat.name %></h1>
+
+<p>Tengo <%= @cat.age %> años </p>
+
+<a href="/cats/<%= @cat.id %>/edit">Editar</a>
+
+<form action="/cats/<%= @cat.id %>" method="post">
+  <input type="hidden" name='_method' value="DELETE">
+  <input type="submit" value='BORRAR'>
+</form>
+
