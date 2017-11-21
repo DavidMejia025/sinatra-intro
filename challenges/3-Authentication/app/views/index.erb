@@ -2,5 +2,14 @@
   <%# Por hacer :
   1. Si un usuario NO esta logueado mostrar "Bienvenido".
   2. Si el Usuario esta logueado Mostrar todos los usuarios %>
-  <a href="/sessions/new">Log in</a>
+  <% unless @session  %>
+  	<a href="/sessions/new">Log in</a>
+  	<% else %>
+  		<ul>
+  		<% @users.each do |user| %>
+  			<li> <%= user.name %></li>
+  		<% end %>
+  		</ul>
+  <% end %>
+  
 </div>
